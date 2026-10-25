@@ -1,15 +1,16 @@
-binary="0."
+binary = "0."
+a = 0.1
+result = 0
+weight = 0.5
 
-a=0.399
-result=float(binary)
+while abs(result - a) >= 0.00001:
+    a = a * 2
+    bit = int(a)
+    binary = binary + str(bit)
 
-while  result < 0.000001:
-    a=a*2
-    if a >= 1:
-        binary += "1"
-        a -= 1
-    else:
-        binary += "0"
-    result=float(binary)
+    result = result + bit * weight
+    a = a - bit
+    weight = weight / 2
 
-print("Binary representation of 0.371 is: "+binary)
+print("Binary representation of 0.1 is: " + binary)
+print(f"Approximate value: {result:.5f}")

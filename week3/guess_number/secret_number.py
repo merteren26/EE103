@@ -1,0 +1,1 @@
+secret_num=6
